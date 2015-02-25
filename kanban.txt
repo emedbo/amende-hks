@@ -1,0 +1,17 @@
+- Sett opp agenda til å sende mail via sendgrid.
+- Lag funksjon for å signe opp.
+    - Skal få beskjed om at det funker!
+        - Ny popup
+    - Skal ikke kunne submitte hvis:
+        - Ikke knowit-adresse
+        - Ikke fornavn.etternavn
+    - Hvis det gikk feil: Popup
+        - Adresse eksisterer
+        - Noe føkket
+
+- Putt prosjekt på GitHub
+- Lag Azure site
+    - Med MongoDB
+-
+
+
