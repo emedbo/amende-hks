@@ -1,5 +1,5 @@
-- Sett opp agenda til å sende mail via sendgrid.
 - Lag funksjon for å signe opp.
+
     - Skal få beskjed om at det funker!
         - Ny popup
     - Skal ikke kunne submitte hvis:
@@ -9,7 +9,6 @@
         - Adresse eksisterer
         - Noe føkket
 
-- Putt prosjekt på GitHub
 - Lag Azure site
     - Med MongoDB
 -
