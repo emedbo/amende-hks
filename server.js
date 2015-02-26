@@ -31,6 +31,9 @@ router.route('/legs')
 router.route('/join')
     .post(signupController.join);
 
+router.route('/participant/:id?')
+    .get(signupController.getDataForParticipant);
+
 app.use('/api', router);
 
 app.get('*', function (req, res) {

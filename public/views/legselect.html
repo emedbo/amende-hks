@@ -1,0 +1,31 @@
+<div class="fixit">
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="center">
+                    <h2>{{participant.name}}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="three columns">
+                <p>Valgte etapper</p>
+            </div>
+            <div class="nine columns">
+                <div ng-repeat="leg in legs">
+                    <div class="legselect-leg-container" ng-click="toggleLegSelected(leg)"
+                            ng-class="{'legselect-selected': leg.isSelected, 'legselect-disabled': leg.isDisabled}">
+                        <div class="legselect-leg-info">
+                            <h4 class="legselect-leg-name">Etappe {{leg.name}} - </h4>
+                            <h4 class="legselect-leg-name">{{leg.distance}}m</h4>
+                        </div>
+                        <div class="legselect-leg-info">
+                            <p class="legselect-leg-metainfo">2 har signet opp på denne etappen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

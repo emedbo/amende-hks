@@ -1,11 +1,15 @@
 @import 'skeleton/skeleton';
 @import 'spinner';
+@import 'legselect';
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 //@primary-color: #fba;
 //@link-color: #faa;
 
 @font-family: 'Droid Sans', sans-serif;
-
+h4{
+  margin: 0;
+  padding: 0;
+}
 .home{
   background: url('../images/012uMXHJ1oF1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -34,7 +38,7 @@ h1.home-headline{
   margin-top: 1rem;
   background-color: rgba(100, 120, 120, 0.8);
 }
-h1.leg-name{
+.leg-name{
   margin-left: 1rem;
   color: rgba(50, 50, 50, 0.8);
   text-decoration: none;
@@ -55,6 +59,12 @@ h4.leg-distance{
   display:table;
   margin: 0 auto;
 }
+.vert-center{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 img.dialog-image{
   max-width: 100%;
 }

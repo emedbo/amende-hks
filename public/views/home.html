@@ -1,0 +1,33 @@
+<div class="home" ng-controller="HomeCtrl">
+    <div class="home-banner">
+
+    </div>
+
+    <div class="grey-banner">
+        <h1 class="home-headline center-text">Bli med!</h1>
+
+        <h3 class="home-signup-pitch center-text">Bli med på Amendittenes holmenkollstafettlag!</h3>
+        <button class="button-primary center" ng-click="signUp()">Meld pa</button>
+    </div>
+
+    <div class="grey-banner">
+
+        <div class="container ">
+            <div class="row">
+                <div class="twelve columns">
+                    <h3 class="center-text">Etapper</h3>
+                </div>
+            </div>
+            <div class="row" ng-repeat="row in splitLegs">
+                <div class="one-third column" ng-repeat="leg in row">
+                    <a ng-click="openLeg(leg)" ng-href="#">
+                        <div class="leg-box">
+                            <span><h1 class="leg-name">{{leg.name}}</h1></span>
+                            <span><h4 class="leg-distance">{{leg.distance}}m</h4></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

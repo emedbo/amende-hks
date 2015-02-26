@@ -631,6 +631,41 @@ there.
     -webkit-transform: rotate(-360deg);
   }
 }
+div.legselect-leg-container {
+  background-color: #bbbbbb;
+  padding: 0;
+  margin-bottom: 1em;
+  overflow: auto;
+}
+div.legselect-leg-container:hover {
+  cursor: pointer;
+}
+div.legselect-selected {
+  background-color: #008000;
+  color: white;
+}
+div.legselect-disabled {
+  background-color: darkseagreen;
+}
+div.legselect-disabled:hover {
+  cursor: default;
+}
+.legselect-leg-info {
+  margin: 1rem 0 0 1rem;
+}
+.legselect-leg-name {
+  display: inline;
+}
+.legselect-leg-metainfo {
+  margin: 0;
+}
+.fixit {
+  overflow: auto;
+}
+h4 {
+  margin: 0;
+  padding: 0;
+}
 .home {
   background: url('../images/012uMXHJ1oF1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -656,7 +691,7 @@ h1.home-headline {
   margin-top: 1rem;
   background-color: rgba(100, 120, 120, 0.8);
 }
-h1.leg-name {
+.leg-name {
   margin-left: 1rem;
   color: rgba(50, 50, 50, 0.8);
   text-decoration: none;
@@ -675,6 +710,11 @@ h4.leg-distance {
 .center {
   display: table;
   margin: 0 auto;
+}
+.vert-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 img.dialog-image {
   max-width: 100%;

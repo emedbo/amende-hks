@@ -1,24 +1,21 @@
-- Lag funksjon for å signe opp.
+- Site for å registrere
+    - Navn
+        - ContentEditable, eller hide/show med editName = true
+        - Klarer vi å få på en knapp her?
 
-    - Skal ikke kunne submitte hvis:
-        /- Ikke knowit-adresse
-
-
-    Det går bra:
-    ---------------------
-    /- Felt og "Bli med" knapp forsvinner, melding "Du er med, sjekk email" kommer opp
-
-    Det går feil:
-    ----------------------
-    /- Felt og "Bli med" knapp er fortsatt der; melding om at noe feilet.
-
-    Du er allerede registrert:
-    ---------------------
-    /- Melding om at du allerede er registrert. Knapp for å resende email.
-
+    - Hvilke etapper som er valgt og rangering av disse
+        - Knapper for å velge. Maks 3 kan være enabled
+            - Indiker at en etapper er valgt på knappen
+        - Kan rangere etappene til høyre/venstre
+    - EN metode for å submitte.
+        - Submit hver gang man gjør noe
 
 - Lag Azure site
     - Med MongoDB
 - Style førsteside penere
+- Lag en liste på førstesiden over dem som har signet opp
+- Rename alle controllers til convention
+- Sjekk alle navn, de skal være bra og forklarende
+
 
 
