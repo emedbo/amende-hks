@@ -26,7 +26,6 @@ hks.controller('HomeCtrl', ['$scope', 'ngDialog', 'DataService', function ($scop
             if (!pushed)
                 arrayToReturn.push(subArray);
 
-            console.log(JSON.stringify(arrayToReturn));
             return arrayToReturn;
         }
     }

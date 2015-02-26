@@ -1,19 +1,48 @@
 <div class="ngdialog-content">
-<h2>Bli med!</h2>
-    <form ng-submit="join()">
-        <div class="row">
-            <p>Skriv inn din Knowit-email-adresse, og du får en mail med en link for påmelding. </p>
-        </div>
-        <div class="row">
-            <div class="twelve columns">
-                <label for="email">Din Knowit Email-adresse</label>
-                <input class="u-full-width" type="email" ng-model="email" placeholder="ditt.navn@knowit.no" id="email">
+    <div ng-hide="submitted">
+        <h2>Bli med!</h2>
+
+        <form ng-submit="join()" name="joinForm">
+            <div class="row">
+                <p>Skriv inn din Knowit-email-adresse, og du får en mail med en link for påmelding. </p>
             </div>
-        </div>
-        <div class="row">
-            <div class="u-pull-right">
-                <button class="ngdialog-button-primary">Bli med!</button>
+            <div class="row">
+                <div class="twelve columns">
+                    <label for="email">Din Knowit Email-adresse</label>
+                    <input class="u-full-width" type="email" ng-model="email" placeholder="ditt.navn@knowit.no"
+                           id="email"
+                           name="email" required autofocus
+                           ng-change="validateKnowitEmail(joinForm)">
+
+                    <div ng-if="joinForm.email.$dirty" ng-messages="joinForm.email.$error">
+                        <div ng-message="knowit"><h6>Det må være en Knowit-adresse med fornavn.etternavn@knowit.no</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </form>
+            <div class="row">
+                <div class="u-pull-right">
+                    <button class="button-primary" ng-disabled="joinForm.$invalid">Bli med!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="spinner" ng-show="isBusy">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+
+    <div ng-show="alreadySignedUp">
+        <h2>Du har allerede signet opp!</h2>
+        <h4>Bruk denne linken til å logge inn: </h4>
+        <a href="{{link}}">{{link}}</a>
+    </div>
+    <div ng-show="success">
+        <h2>Supert!</h2>
+        <h4>Nå er du forbi security-sjekk. Sjekk mailen din, der ligger link for å komme videre.</h4>
+    </div>
+    <div ng-show="error">
+        <h2>En feil skjedde...</h2>
+        <button ng-click="tryAgain()">Prøv igjen</button>
+    </div>
 </div>

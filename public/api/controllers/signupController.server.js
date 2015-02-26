@@ -6,8 +6,9 @@ exports.join = function (req, res, next) {
     Participant.findOne({email: req.body.email}, function (err, part) {
 
         if (err) return next(err);
-        if (part == 1) {
-            res.status(400).send('Du er allerede med! Bruk denne adressen for å logge på: ' + part.link)
+        if (part) {
+            res.status(400).send({reason: 'AlreadySignedUp', link: part.link});
+            return;
         }
         else {
             var email = req.body.email;

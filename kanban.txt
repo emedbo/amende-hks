@@ -1,16 +1,24 @@
 - Lag funksjon for å signe opp.
 
-    - Skal få beskjed om at det funker!
-        - Ny popup
     - Skal ikke kunne submitte hvis:
-        - Ikke knowit-adresse
-        - Ikke fornavn.etternavn
-    - Hvis det gikk feil: Popup
-        - Adresse eksisterer
-        - Noe føkket
+        /- Ikke knowit-adresse
+
+
+    Det går bra:
+    ---------------------
+    /- Felt og "Bli med" knapp forsvinner, melding "Du er med, sjekk email" kommer opp
+
+    Det går feil:
+    ----------------------
+    /- Felt og "Bli med" knapp er fortsatt der; melding om at noe feilet.
+
+    Du er allerede registrert:
+    ---------------------
+    /- Melding om at du allerede er registrert. Knapp for å resende email.
+
 
 - Lag Azure site
     - Med MongoDB
--
+- Style førsteside penere
 
 
