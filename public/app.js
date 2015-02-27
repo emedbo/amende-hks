@@ -1,4 +1,4 @@
-var hks = angular.module('hks', ['ngDialog', 'ngMessages', 'ngRoute'])
+var hks = angular.module('hks', ['ngDialog', 'ngMessages', 'ngRoute', 'ui.sortable'])
 
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.html5Mode(true);

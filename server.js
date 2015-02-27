@@ -32,7 +32,8 @@ router.route('/join')
     .post(signupController.join);
 
 router.route('/participant/:id?')
-    .get(signupController.getDataForParticipant);
+    .get(signupController.getDataForParticipant)
+    .post(signupController.saveParticipant);
 
 app.use('/api', router);
 

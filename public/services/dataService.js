@@ -9,6 +9,9 @@ hks.service('DataService', function ($http) {
         },
         getDataForParticipant: function (id) {
             return $http.get('api/participant/'+id);
+        },
+        saveParticipant: function (participant) {
+            return $http.post('api/participant', {participant: participant});
         }
     };
 

@@ -7,6 +7,12 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
     $scope.participant = {};
     $scope.legs = [];
 
+
+
+    // Todo:
+    // Neste er å sette isselected på leg etter at både leg og participant er lastet
+    // Se answer her for hvordan neste funksjoner i javascript.
+    // http://stackoverflow.com/questions/11278018/how-to-execute-a-javascript-function-only-after-multiple-other-functions-have-co
     DataService.getDataForParticipant($routeParams.id)
         .success(function (participant) {
             $scope.participant = participant;
@@ -20,11 +26,25 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
             $scope.legs = legData;
         });
 
+    $scope.sortableOptions = {
+        containment: '#sortable-container'
+    };
+
+    $scope.save = function () {
+        DataService.saveParticipant($scope.participant);
+    };
+
     $scope.toggleLegSelected = function (leg) {
         if(leg.isDisabled) {
             return;
         }
         leg.isSelected = !leg.isSelected;
+        if(leg.isSelected) {
+            $scope.participant.selectedLegs.push(leg.name);
+        }
+        else{
+            $scope.participant.selectedLegs.remove(leg.name);
+        }
         var countSelected = Count($scope.legs, function (leg) {
             return leg.isSelected;
         })();
@@ -43,9 +63,6 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
                 item.isDisabled = false;
             })
         }
-
-
-
     };
 
 

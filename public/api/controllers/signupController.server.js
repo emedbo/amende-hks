@@ -49,6 +49,25 @@ exports.getDataForParticipant = function (req, res, next) {
     })
 };
 
+exports.saveParticipant = function (req, res, next) {
+    if(!req.body.participant) {
+        res.sendStatus(400);
+        return;
+    }
+    Participant.findByIdAndUpdate(req.body.participant._id,
+        {
+            name: req.body.participant.name,
+            selectedLegs: req.body.participant.selectedLegs
+        },
+        function (err, part) {
+        if (err) return next(err);
+        if(!part) {
+            res.sendStatus(404);
+        }
+        res.sendStatus(200);
+    });
+};
+
 function extractNameFromEmail(email) {
     var nameArr = email.split("@")[0].split(".");
     nameArr = utils.capitalizeFirstLetter(nameArr);
