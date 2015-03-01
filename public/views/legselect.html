@@ -19,19 +19,25 @@
                             <h4 class="legselect-leg-name">Etappe {{leg.name}} - </h4>
                             <h4 class="legselect-leg-name">{{leg.distance}}m</h4>
                         </div>
-                        <div class="legselect-leg-info">
-                            <p class="legselect-leg-metainfo">2 har signet opp på denne etappen</p>
+                        <div class="legselect-leg-info" ng-show="leg.otherPartitipants > 0">
+                            <p class="legselect-leg-metainfo">{{leg.otherPartitipants}} andre signet opp på denne etappen</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="three columns">
                 <h4>Ranger etapper</h4>
-                <ul class="as-sortable-container" as-sortable="sortableOptions" ng-model="selectedLegs" >
+                <ul class="as-sortable-container" as-sortable="sortableOptions" ng-model="participant.selectedLegs" >
                     <li ng-repeat="item in participant.selectedLegs" as-sortable-item class="as-sortable-item">
                         <div as-sortable-item-handle class="as-sortable-item-handle" style="height:50px">
                             <span data-ng-bind="item"></span>
                         </div>
+                    </li>
+                </ul>
+                <h4>Andre som er med:</h4>
+                <ul style="list-style: none">
+                    <li ng-repeat="name in names">
+                        {{name}}
                     </li>
                 </ul>
             </div>

@@ -633,6 +633,7 @@ there.
 }
 div.legselect-leg-container {
   background-color: #bbbbbb;
+  height: 10rem;
   padding: 0;
   margin-bottom: 1em;
   overflow: auto;

@@ -8,7 +8,6 @@ exports.join = function (req, res, next) {
         if (err) return next(err);
         if (part) {
             res.status(400).send({reason: 'AlreadySignedUp', link: part.link});
-            return;
         }
         else {
             var email = req.body.email;
@@ -66,6 +65,18 @@ exports.saveParticipant = function (req, res, next) {
         }
         res.sendStatus(200);
     });
+};
+
+
+exports.getRegistrations = function (req, res, next) {
+    Participant
+        .find()
+        .select('name selectedLegs')
+        .exec(function (err, parts) {
+            if (err) return next(err);
+
+            res.send(parts);
+        })
 };
 
 function extractNameFromEmail(email) {

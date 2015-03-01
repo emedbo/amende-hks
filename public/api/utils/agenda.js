@@ -15,7 +15,7 @@ agenda.define('join email', function (job, done) {
 
         var mailOptions = {
             from: 'Amendittene <noreply@amende-hks.azurewebsites.com>',
-            to: participant.email,
+            to: "emedbo@gmail.com",// participant.email,
             subject: 'Du er med!',
             html: '<h1>Klikk for å komme videre og velge etappe</h1><br /><br /><a href=\"' + htmlLink.toString() + '\">Velg etappe</a>'
         };

@@ -1,11 +1,3 @@
-exports.newRegistration = function (req, res, next) {
-
-};
-
-exports.getRegistrations = function (req, res, next) {
-
-};
-
 exports.getAllLegs = function (req, res, next) {
     var legData =[{
         name: 1,

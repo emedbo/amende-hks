@@ -1,17 +1,7 @@
-- Site for å registrere
-    - Navn
-        - ContentEditable, eller hide/show med editName = true
-        - Klarer vi å få på en knapp her?
+- Navn
+    - ContentEditable, eller hide/show med editName = true
+    - Klarer vi å få på en knapp her?
 
-    - Hvilke etapper som er valgt og rangering av disse
-        - Knapper for å velge. Maks 3 kan være enabled
-            /- Indiker at en etapper er valgt på knappen
-            - Når jeg har valgt 3 etapper, scroll til toppen
-        - Kan rangere etappene til høyre/venstre
-    - EN metode for å submitte.
-        - Submit hver gang man gjør noe
-    - NÅR JEG LASTER SIDEN IGJEN MED LINK:
-        - Populer data som er hentet ned!
 
 - Lag Azure site
     - Med MongoDB

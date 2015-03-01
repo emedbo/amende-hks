@@ -1,6 +1,6 @@
 hks.service('DataService', function ($http) {
 
-    var getDataForLegSelectCtrl = function (id) {
+    var getDataForLegSelectCtrl = function (id, successCb, errorCb) {
         async.parallel([
                 function (callback) {
                     getData()
@@ -33,7 +33,10 @@ hks.service('DataService', function ($http) {
             function(err, results){
                 if(!err)
                 {
-
+                    successCb(results);
+                }
+                else{
+                    errorCb(err);
                 }
             }
         )

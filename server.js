@@ -28,6 +28,9 @@ var router = express.Router();
 router.route('/legs')
     .get(legController.getAllLegs);
 
+router.route('/selectedLegs')
+    .get(signupController.getRegistrations);
+
 router.route('/join')
     .post(signupController.join);
 
