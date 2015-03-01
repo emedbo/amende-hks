@@ -11,19 +11,22 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
 
     // Todo:
     // Neste er å sette isselected på leg etter at både leg og participant er lastet
-    // Se answer her for hvordan neste funksjoner i javascript.
-    // http://stackoverflow.com/questions/11278018/how-to-execute-a-javascript-function-only-after-multiple-other-functions-have-co
-    DataService.getDataForParticipant($routeParams.id)
-        .success(function (participant) {
-            $scope.participant = participant;
-            console.log('part sucess');
-        })
-        .error(function (error) {
-            console.log('part error');
-        });
+
     DataService.getData()
         .success(function (legData) {
             $scope.legs = legData;
+            console.log(JSON.stringify(legData));
+            DataService.getDataForParticipant($routeParams.id)
+                .success(function (participant) {
+                    $scope.participant = participant;
+                    for(var i = 0; i < $scope.participant.selectedLegs.length; i++) {
+                        var leg = $scope.participant.selectedLegs[i];
+                        $scope.legs[leg-1].isSelected = true;
+                    }
+                    disableIfMaxSelected();
+                })
+                .error(function (error) {
+                });
         });
 
     $scope.sortableOptions = {
@@ -43,8 +46,15 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
             $scope.participant.selectedLegs.push(leg.name);
         }
         else{
-            $scope.participant.selectedLegs.remove(leg.name);
+            console.log($scope.participant.selectedLegs.length);
+            //$scope.participant.selectedLegs.remove(leg.name);
+            removeItem($scope.participant.selectedLegs, leg.name);
+            console.log($scope.participant.selectedLegs.length);
         }
+        disableIfMaxSelected();
+    };
+
+    function disableIfMaxSelected(){
         var countSelected = Count($scope.legs, function (leg) {
             return leg.isSelected;
         })();
@@ -63,7 +73,18 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
                 item.isDisabled = false;
             })
         }
-    };
+    }
+
+    function removeItem(array, item){
+        console.log(item);
+        var index = array.indexOf(item);
+        console.log(JSON.stringify(array));
+        console.log(index);
+        if(index > -1)
+        {
+            array.splice(index, 1);
+        }
+    }
 
 
     function Count(coll, selector) {
@@ -99,6 +120,5 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
         //    return retItems
         //}
     }
-
 
 }]);
