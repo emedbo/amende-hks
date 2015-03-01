@@ -4,10 +4,20 @@
     </div>
 
     <div class="grey-banner">
-        <h1 class="home-headline center-text">Bli med!</h1>
+        <div class="container">
+            <div class="row">
+                <h1 class="home-headline center-text">Bli med!</h1>
 
-        <h3 class="home-signup-pitch center-text">Bli med på Amendittenes holmenkollstafettlag!</h3>
-        <button class="button-primary center" ng-click="signUp()">Meld pa</button>
+                <h3 class="home-signup-pitch center-text">Bli med på Amendittenes holmenkollstafettlag!</h3>
+                <div class="six columns offset-by-three">
+                <a ng-click="signUp()" ng-href="#" class="leg-box-link">
+                    <div class="leg-box">
+                        <h1 class="center-text vert-center">MELD PÅ!</h1>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="grey-banner">
@@ -20,7 +30,7 @@
             </div>
             <div class="row" ng-repeat="row in splitLegs">
                 <div class="one-third column" ng-repeat="leg in row">
-                    <a ng-click="openLeg(leg)" ng-href="#">
+                    <a ng-click="openLeg(leg)" ng-href="#" class="leg-box-link">
                         <div class="leg-box">
                             <span><h1 class="leg-name">{{leg.name}}</h1></span>
                             <span><h4 class="leg-distance">{{leg.distance}}m</h4></span>

@@ -1,26 +1,35 @@
 @import 'skeleton/skeleton';
+@import 'includes';
+
+.legselect-page{
+  background-color: @background-color;
+}
 
 div.legselect-leg-container{
-  background-color: @border-color;
+  background-color: @leg-unselected;
   height: 10rem;
   padding:0;
   margin-bottom: 1em;
   overflow:auto;
+  color: @dark-grey;
 }
 div.legselect-leg-container:hover{
   cursor: pointer;
 }
 
 div.legselect-selected{
-  background-color: #008000;
-  color: white;
+  background-color: @leg-selected;
+  color: @light-grey;
 }
 div.legselect-disabled{
-  background-color: darkseagreen;
+  background-color: @leg-disabled;
+  color: @secondary-color;
 }
 div.legselect-disabled:hover{
   cursor: default;
 }
+
+
 
 .legselect-leg-info{
  margin:1rem 0 0 1rem;
@@ -31,7 +40,4 @@ div.legselect-disabled:hover{
 
 .legselect-leg-metainfo{
  margin:0;
-}
-.fixit{
- overflow: auto;
 }

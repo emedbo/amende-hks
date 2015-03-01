@@ -1,3 +1,6 @@
+@import 'skeleton/skeleton';
+@import 'includes';
+
 /* ************************************** */
 /* Mandatory CSS required for ng-sortable */
 /* ************************************** */
@@ -35,8 +38,8 @@
 }
 
 .as-sortable-item {
-  border: solid 1px darkgrey;
-  background-color: #ffffff;
+  background-color: @dragdrop-item-background;
+  color: @light-grey;
 }
 
 .as-sortable-item-handle {
@@ -45,7 +48,7 @@
 .as-sortable-placeholder {
   border: 1px dashed darkgrey;
   box-sizing: border-box;
-  background-color: #dbdbdb;
+  background-color: @border-color;
 }
 
 .as-sortable-drag {

@@ -2,6 +2,8 @@
 @import 'spinner';
 @import 'legselect';
 @import 'dragdrop';
+@import 'includes';
+
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 //@primary-color: #fba;
 //@link-color: #faa;
@@ -11,6 +13,7 @@ h4{
   margin: 0;
   padding: 0;
 }
+
 .home{
   background: url('../images/012uMXHJ1oF1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -26,7 +29,7 @@ h4{
 }
 
 .grey-banner {
-  background-color: rgba(230, 230, 250, 0.8);
+  background-color: fade(@background-color, 80%);
   margin:0;
   padding:1rem;
 }
@@ -37,8 +40,16 @@ h1.home-headline{
 .leg-box{
   height: 10rem;
   margin-top: 1rem;
-  background-color: rgba(100, 120, 120, 0.8);
+  background-color: fade(@home-tile-background, 80%);
 }
+a.leg-box-link{
+  color: @light-grey;
+  text-decoration: none;
+}
+.leg-box:hover{
+  background-color: fade(@home-tile-hover, 70%);
+}
+
 .leg-name{
   margin-left: 1rem;
   color: rgba(50, 50, 50, 0.8);

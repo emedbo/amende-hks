@@ -631,22 +631,27 @@ there.
     -webkit-transform: rotate(-360deg);
   }
 }
+.legselect-page {
+  background-color: #cad2c5;
+}
 div.legselect-leg-container {
-  background-color: #bbbbbb;
+  background-color: #84a98c;
   height: 10rem;
   padding: 0;
   margin-bottom: 1em;
   overflow: auto;
+  color: #333333;
 }
 div.legselect-leg-container:hover {
   cursor: pointer;
 }
 div.legselect-selected {
-  background-color: #008000;
-  color: white;
+  background-color: #52796f;
+  color: #e1e1e1;
 }
 div.legselect-disabled {
-  background-color: darkseagreen;
+  background-color: #bbbbbb;
+  color: #555555;
 }
 div.legselect-disabled:hover {
   cursor: default;
@@ -659,9 +664,6 @@ div.legselect-disabled:hover {
 }
 .legselect-leg-metainfo {
   margin: 0;
-}
-.fixit {
-  overflow: auto;
 }
 /* ************************************** */
 /* Mandatory CSS required for ng-sortable */
@@ -691,13 +693,13 @@ div.legselect-disabled:hover {
   border-radius: 0;
 }
 .as-sortable-item {
-  border: solid 1px darkgrey;
-  background-color: #ffffff;
+  background-color: #52796f;
+  color: #e1e1e1;
 }
 .as-sortable-placeholder {
   border: 1px dashed darkgrey;
   box-sizing: border-box;
-  background-color: #dbdbdb;
+  background-color: #bbbbbb;
 }
 .as-sortable-drag {
   opacity: .8;
@@ -722,7 +724,7 @@ h4 {
   display: block;
 }
 .grey-banner {
-  background-color: rgba(230, 230, 250, 0.8);
+  background-color: rgba(202, 210, 197, 0.8);
   margin: 0;
   padding: 1rem;
 }
@@ -732,7 +734,14 @@ h1.home-headline {
 .leg-box {
   height: 10rem;
   margin-top: 1rem;
-  background-color: rgba(100, 120, 120, 0.8);
+  background-color: rgba(82, 121, 111, 0.8);
+}
+a.leg-box-link {
+  color: #e1e1e1;
+  text-decoration: none;
+}
+.leg-box:hover {
+  background-color: rgba(132, 169, 140, 0.7);
 }
 .leg-name {
   margin-left: 1rem;

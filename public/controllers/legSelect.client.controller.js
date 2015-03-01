@@ -9,40 +9,12 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
     $scope.legs = [];
     $scope.allLegParticipants = [];
 
-
-    // Todo:
-    // Neste er å sette isselected på leg etter at både leg og participant er lastet
-
-    //DataService.getData()
-    //    .success(function (legData) {
-    //        $scope.legs = legData;
-    //        console.log(JSON.stringify(legData));
-    //        DataService.getDataForParticipant($routeParams.id)
-    //            .success(function (participant) {
-    //                $scope.participant = participant;
-    //                for(var i = 0; i < $scope.participant.selectedLegs.length; i++) {
-    //                    var leg = $scope.participant.selectedLegs[i];
-    //                    $scope.legs[leg-1].isSelected = true;
-    //                }
-    //                disableIfMaxSelected();
-    //            })
-    //            .error(function (error) {
-    //            });
-    //    });
     DataService.getDataForLegSelectCtrl($routeParams.id, function (data) {
         $scope.legs = data[0];
         $scope.participant = data[1];
-        //$scope.allLegParticipants = data[2];
-
-        console.log(JSON.stringify(data[2]));
-
-
-        // må hente ut alle navn fra resultat
-
 
         $scope.names = getNames(data[2]);
         GetLegSelections(data[2]);
-
 
         for (var i = 0; i < $scope.participant.selectedLegs.length; i++) {
             var leg = $scope.participant.selectedLegs[i];
@@ -76,6 +48,9 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
     };
 
     $scope.sortableOptions = {
+        orderChanged: function(event) {
+            $scope.save();
+        },
         containment: '#sortable-container'
     };
 
@@ -98,6 +73,7 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
             console.log($scope.participant.selectedLegs.length);
         }
         disableIfMaxSelected();
+        $scope.save();
     };
 
     function disableIfMaxSelected() {
@@ -120,17 +96,6 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
             })
         }
     }
-
-    function removeItem(array, item) {
-        console.log(item);
-        var index = array.indexOf(item);
-        console.log(JSON.stringify(array));
-        console.log(index);
-        if (index > -1) {
-            array.splice(index, 1);
-        }
-    }
-
 
     function Count(coll, selector) {
         var count = 0;
@@ -161,9 +126,6 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
             }
         }
         return retItems;
-        //return function () {
-        //    return retItems
-        //}
     }
 
 }]);
