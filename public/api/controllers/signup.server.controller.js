@@ -14,7 +14,8 @@ exports.join = function (req, res, next) {
             var name = extractNameFromEmail(email);
 
             var unique = utils.makeid();
-            var link = 'http://' + req.get('host') + '/legselect/' + unique;
+            var protocol = req.get('host') === 'localhost:3000' ? 'http' : 'https';
+            var link = protocol + '://' + req.get('host') + '/legselect/' + unique;
 
             var participant = new Participant({
                 email: email,

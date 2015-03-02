@@ -1,6 +1,5 @@
 - Lag en liste på førstesiden over dem som har signet opp
-- Sjekk alle navn, de skal være bra og forklarende
-
+- Test. Og Test
 
 
 
