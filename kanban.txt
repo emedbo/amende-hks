@@ -1,14 +1,12 @@
 - Navn
     - ContentEditable, eller hide/show med editName = true
     - Klarer vi å få på en knapp her?
-
-
-- Lag Azure site
-    - Med MongoDB
-- Style førsteside penere
 - Lag en liste på førstesiden over dem som har signet opp
 - Rename alle controllers til convention
 - Sjekk alle navn, de skal være bra og forklarende
+- Legg på gulpfile og kjør den!
+
+Oppdater readme.md.
 
 
 
