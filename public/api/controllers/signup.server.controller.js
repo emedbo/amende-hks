@@ -1,6 +1,6 @@
 var Participant = require('../models/participant.server.model');
 var agenda = require('../utils/agenda');
-var utils = require('../utils/utils');
+var utils = require('../utils/utils.server');
 
 exports.join = function (req, res, next) {
     Participant.findOne({email: req.body.email}, function (err, part) {

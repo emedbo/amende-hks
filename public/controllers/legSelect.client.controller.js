@@ -14,7 +14,7 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
         $scope.participant = data[1];
 
         $scope.names = getNames(data[2]);
-        GetLegSelections(data[2]);
+        SetOtherParticipantLegSelections(data[2]);
 
         for (var i = 0; i < $scope.participant.selectedLegs.length; i++) {
             var leg = $scope.participant.selectedLegs[i];
@@ -31,7 +31,7 @@ hks.controller('LegSelectCtrl', ['$scope', '$routeParams', '$location', 'DataSer
         });
     }
 
-    var GetLegSelections = function (data2) {
+    var SetOtherParticipantLegSelections = function (data2) {
         $scope.legs.forEach(function (leg) {
             leg.otherPartitipants = 0;
             data2.forEach(function (d) {

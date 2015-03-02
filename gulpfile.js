@@ -25,7 +25,7 @@ gulp.task('watch', function () {
 
 gulp.task('templates', function () {
     gulp.src('public/views/**/*.html')
-        .pipe(templateCache({root: 'views', module: 'AtlApp'}))
+        .pipe(templateCache({root: 'views', module: 'hks'}))
         .pipe(gulp.dest('public'));
 });
 
@@ -44,8 +44,6 @@ gulp.task('compress', function () {
 
 gulp.task('libs', function () {
     gulp.src([
-        'public/libs/jquery.js',
-        'public/libs/jqueryui/jquery-ui.min.js',
         'public/libs/angular.js',
         'public/libs/*.js',
 
@@ -55,5 +53,4 @@ gulp.task('libs', function () {
         .pipe(gulp.dest('public'));
 });
 
-//gulp.task('default', ['less', 'watch', 'templates', 'compress', 'libs']);
-gulp.task('default', ['less', 'watch']);
+gulp.task('default', ['less', 'watch', 'templates', 'compress', 'libs']);

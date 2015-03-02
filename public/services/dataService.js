@@ -1,4 +1,4 @@
-hks.service('DataService', function ($http) {
+hks.service('DataService', ['$http', function ($http) {
 
     var getDataForLegSelectCtrl = function (id, successCb, errorCb) {
         async.parallel([
@@ -66,4 +66,4 @@ hks.service('DataService', function ($http) {
         getDataForLegSelectCtrl: getDataForLegSelectCtrl
     };
 
-});
+}]);

@@ -12,21 +12,26 @@ div.legselect-leg-container{
   margin-bottom: 1em;
   overflow:auto;
   color: @dark-grey;
+  border: 3px @leg-unselected solid;
 }
 div.legselect-leg-container:hover{
+  border: 3px @light-grey solid;
   cursor: pointer;
 }
 
 div.legselect-selected{
   background-color: @leg-selected;
   color: @light-grey;
+  border: 3px @leg-selected solid;
 }
 div.legselect-disabled{
   background-color: @leg-disabled;
   color: @secondary-color;
+  border: 3px @leg-disabled solid;
 }
 div.legselect-disabled:hover{
   cursor: default;
+  border: 3px @leg-disabled solid;
 }
 
 

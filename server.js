@@ -11,8 +11,8 @@ mongoose.connect(dbUri);
 
 var app = express();
 
-var legController = require('./public/api/controllers/legController');
-var signupController = require('./public/api/controllers/signupController.server');
+var legController = require('./public/api/controllers/leg.server.controller');
+var signupController = require('./public/api/controllers/signup.server.controller.js');
 
 
 // uncomment after placing your favicon in /public
