@@ -1,4 +1,4 @@
-var agenda = require('agenda')({db: {address: 'localhost/hks'}});
+var agenda = require('agenda')({db: {address: process.env.CUSTOMCONNSTR_MONGOLAB_URI ||  'localhost/hks'}});
 var nodemailer = require('nodemailer');
 var Participant = require('../models/participant.server.model');
 
