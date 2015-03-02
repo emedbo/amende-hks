@@ -4,6 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var compress = require('compression');
 
 // Mongoose connection
 var dbUri = process.env.CUSTOMCONNSTR_MONGOLAB_URI || 'mongodb://localhost/hks';
@@ -18,11 +19,12 @@ var signupController = require('./public/api/controllers/signup.server.controlle
 // uncomment after placing your favicon in /public
 app.set('port', process.env.PORT || 3000);
 app.set('env', 'development');
+app.use(compress());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 86400000 }));
 
 var router = express.Router();
 router.route('/legs')
