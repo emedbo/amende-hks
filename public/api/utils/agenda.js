@@ -1,6 +1,7 @@
 var agenda = require('agenda')({db: {address: process.env.CUSTOMCONNSTR_MONGOLAB_URI ||  'localhost/hks'}});
 var nodemailer = require('nodemailer');
 var Participant = require('../models/participant.server.model');
+var sendGridPassword = process.env.SENDGRID_PASS;
 
 agenda.define('join email', function (job, done) {
 
@@ -8,7 +9,7 @@ agenda.define('join email', function (job, done) {
 
         var smtpTransport = nodemailer.createTransport({
             service: 'SendGrid',
-            auth: {user: 'emedbo', pass: '54ts37BQUzdg'}
+            auth: {user: 'emedbo', pass: sendGridPassword}
         });
 
         var htmlLink = participant.link;
